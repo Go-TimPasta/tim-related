@@ -10,17 +10,18 @@ USE related;
 
 CREATE TABLE relatedProducts (
   ID int NOT NULL AUTO_INCREMENT,
+  ProductName varchar(255) NOT NULL,
   Imgurl varchar(255) NOT NULL,
-  Picture varchar(255) NOT NULL,
   Shop varchar(255) NOT NULL,
   Price numeric(10, 2) NOT NULL,
   Sale int,
   FreeShipping BOOLEAN,
+  Ad BOOLEAN NOT NULL,
   CategoryId int NOT NULL,
   PRIMARY KEY (ID)
 );
 
-CREATE TABLE relatedSearchesAndCategories (
+CREATE TABLE relatedSearches (
   ID int NOT NULL AUTO_INCREMENT,
   Search varchar(255) NOT NULL,
   Imgurl varchar(250) NOT NULL,

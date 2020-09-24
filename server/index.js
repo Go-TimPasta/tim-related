@@ -15,7 +15,7 @@ server.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Routes:
 // route get for limited number of ads
-server.get(/* '[route]', */ (req, res) => {
+server.get('/related/ads', (req, res) => {
   console.log('request body', req.body);
   model.getAds((err, results) => {
     if (err) {

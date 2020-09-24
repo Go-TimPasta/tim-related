@@ -2,8 +2,7 @@ const db = require('.');
 
 const related = {
   getAds: (callback) => {
-    // TODO: add your code here to fetch all students
-    db.query('SELECT * FROM students INNER JOIN images ON students.id = images.id', (err, results) => {
+    db.query('SELECT * FROM relatedProducts WHERE Ad = true;', (err, results) => {
       if (err) {
         callback(err);
       } else {
