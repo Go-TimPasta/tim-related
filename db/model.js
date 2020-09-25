@@ -32,7 +32,7 @@ const related = {
   },
 
   getRelatedCategories: (id, callback) => {
-    db.query(`SELECT relatedSearches.Search FROM relatedSearches WHERE IsSearch = false AND CategoryId = ${id} ORDER BY RAND() LIMIT 8;`, (err, results) => {
+    db.query(`SELECT relatedSearches.Search FROM relatedSearches WHERE CategoryId = ${id} ORDER BY RAND() LIMIT 8;`, (err, results) => {
       if (err) {
         callback(err);
       } else {

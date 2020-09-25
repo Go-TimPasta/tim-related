@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const bodyparser = require('body-parser');
 const path = require('path');
 const model = require('../db/model.js');
@@ -8,6 +9,7 @@ const server = express();
 const port = 8005;
 
 server.use(morgan('dev'));
+server.use(cors());
 server.use(bodyparser.json());
 server.use(bodyparser.urlencoded({ extended: true }));
 
@@ -86,3 +88,5 @@ server.post('/related/subscribe', (req, res) => {
 })
 
 server.listen(port, () => console.log(`listening on ${port}`));
+
+//server, routers and database helpers all working (via Postman Testing)
