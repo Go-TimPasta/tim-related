@@ -15,9 +15,8 @@ server.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Routes:
 // route get for limited number of ads
-server.get('/related/ads', (req, res) => {
-  console.log('request body', req.body);
-  model.getAds((err, results) => {
+server.get('/related/ads/:id', (req, res) => {
+  model.getAds(req.params.id, (err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {
@@ -28,8 +27,62 @@ server.get('/related/ads', (req, res) => {
 
 // route get for limited number of similar items
 
+server.get('/related/items/:id', (req, res) => {
+  model.getItems(req.params.id, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(results);
+    }
+  })
+})
+
 // route get for related searches
 
+server.get('/related/searches/:id', (req, res) => {
+  model.getRelatedSearches(req.params.id, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(results);
+    }
+  })
+})
+
 // route get for related categories and searches
+
+server.get('/related/categories/:id', (req, res) => {
+  model.getRelatedCategories(req.params.id, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(results);
+    }
+  })
+})
+
+// route to check if email is already subscribed
+
+server.get('/related/subscribe/:email', (req, res) => {
+  model.getOneEmail(req.params.email, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(results);
+    }
+  })
+})
+
+// route to update subscriptions (if email not already subscribed)
+
+server.post('/related/subscribe', (req, res) => {
+  model.addEmail(req.body, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send(results);
+    }
+  })
+})
 
 server.listen(port, () => console.log(`listening on ${port}`));

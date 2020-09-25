@@ -25,6 +25,7 @@ CREATE TABLE relatedSearches (
   ID int NOT NULL AUTO_INCREMENT,
   Search varchar(255) NOT NULL,
   Imgurl varchar(250) NOT NULL,
+  IsSearch BOOLEAN,
   CategoryId int NOT NULL,
   PRIMARY KEY (ID)
 );

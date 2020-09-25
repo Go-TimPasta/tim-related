@@ -39,6 +39,7 @@ const createSearch = () => {
   const search = {};
   search.Search = faker.lorem.words();
   search.Imgurl = faker.image.animals();
+  search.IsSearch = booleans[Math.floor(Math.random() * 2)];
   search.CategoryId = Math.ceil(Math.random() * 5);
   return search;
 };
@@ -54,7 +55,7 @@ const createSearches = () => {
 const insertMockSearches = () => {
   const searches = createSearches();
   searches.forEach((search) => {
-    const queryString = `INSERT INTO relatedSearches (Search, Imgurl, CategoryId) VALUES ('${search.Search}', '${search.Imgurl}', ${search.CategoryId});`;
+    const queryString = `INSERT INTO relatedSearches (Search, Imgurl, IsSearch, CategoryId) VALUES ('${search.Search}', '${search.Imgurl}',${search.IsSearch}, ${search.CategoryId});`;
     db.query(queryString);
   });
 };
