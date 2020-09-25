@@ -34,3 +34,5 @@ CREATE TABLE subscribers (
   Email varchar(255) NOT NULL,
   PRIMARY KEY (ID)
 );
+
+-- schema complete
