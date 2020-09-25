@@ -29,13 +29,6 @@ CREATE TABLE relatedSearches (
   PRIMARY KEY (ID)
 );
 
-CREATE TABLE relatedCategories (
-  ID int NOT NULL AUTO_INCREMENT,
-  SearchOrCategory varchar(255) NOT NULL,
-  CategoryId int NOT NULL,
-  PRIMARY KEY (ID)
-);
-
 CREATE TABLE subscribers (
   ID int NOT NULL AUTO_INCREMENT,
   Email varchar(255) NOT NULL,
