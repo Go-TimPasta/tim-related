@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Ads from './Ads.jsx';
+import Items from './Items.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -64,21 +66,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          Ads
-        </div>
-        <div>
-          You may also like
-        </div>
-        <div>
-          Explore related searches
-        </div>
-        <div>
-          Explore related categories
-        </div>
-        <div>
-          Subscribe
-        </div>
+        <Ads ads={this.state.ads} />
+        <Items items={this.state.items} />
       </div>
     );
   }

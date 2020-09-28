@@ -15,7 +15,7 @@ CREATE TABLE relatedProducts (
   Shop varchar(255) NOT NULL,
   Price numeric(10, 2) NOT NULL,
   Sale int,
-  FreeShipping BOOLEAN,
+  FreeShipping int,
   Ad BOOLEAN NOT NULL,
   CategoryId int NOT NULL,
   PRIMARY KEY (ID)
