@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Ads from './Ads.jsx';
 import Items from './Items.jsx';
+import Searches from './Searches.jsx';
+import Categories from './Categories.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -68,6 +70,8 @@ export default class App extends React.Component {
       <div>
         <Ads ads={this.state.ads} />
         <Items items={this.state.items} />
+        <Searches searches={this.state.searches} />
+        <Categories categories={this.state.categories} />
       </div>
     );
   }
