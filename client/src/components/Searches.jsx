@@ -11,7 +11,7 @@ export default class Searches extends React.Component {
     const SearchBlocks = this.props.searches.map((search) => <Search key={search.ID} search={search} />);
     return (
       <div>
-        <h1>Related Searches</h1>
+        <h1>Explore related searches</h1>
         {SearchBlocks}
       </div>
     );

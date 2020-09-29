@@ -11,7 +11,8 @@ export default class Items extends React.Component {
     const ItemBlocks = this.props.items.map((item) => <Item key={item.ID} item={item} />);
     return (
       <div>
-        <h1>Related Items</h1>
+        <h1>You may also like</h1>
+        <h3>Shop more similar items</h3>
         {ItemBlocks}
       </div>
     );
