@@ -8,7 +8,7 @@ export default class Categories extends React.Component {
   }
 
   render() {
-    const CategoryBlocks = this.props.categories.map((category) => <Category key={category.ID} category={category} />);
+    const CategoryBlocks = this.props.categories.map((category, index) => <Category key={index} category={category} />);
     return (
       <div>
         <h1>Explore related categories & searches</h1>

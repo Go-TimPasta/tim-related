@@ -1,5 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 import Ad from './Ad.jsx';
+
+const StyledAds = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+`;
 
 export default class Ads extends React.Component {
   constructor(props) {
@@ -12,7 +19,9 @@ export default class Ads extends React.Component {
     return (
       <div>
         <h1>Ads</h1>
-        {AdBlocks}
+        <StyledAds>
+          {AdBlocks}
+        </StyledAds>
       </div>
     );
   }
