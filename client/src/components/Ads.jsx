@@ -18,7 +18,7 @@ export default class Ads extends React.Component {
     const AdBlocks = this.props.ads.map((ad) => <Ad key={ad.ID} ad={ad} />);
     return (
       <div>
-        <h1>Ads</h1>
+        <p>Ads</p>
         <StyledAds>
           {AdBlocks}
         </StyledAds>

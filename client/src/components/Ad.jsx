@@ -2,23 +2,48 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledAd = styled.div`
-  flex-basis: 16.66%;
-  flex-wrap: wrap;
+  border-radius: 9px;
+  top: -9px;
+  right: -9px;
+  bottom: -9px;
+  left: -9px;
+
+  @media only screen and (min-width: 0) {
+    flex-grow: 1;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  @media only screen and (min-width: 640px) {
+    flex-grow: 1;
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+
+  @media only screen and (min-width: 900px) {
+    flex-grow: 1;
+    flex-basis: 16.66667%;
+    max-width: 16.66667%;
+  }
+
   &:hover {
-    background-color: red;
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+    transition: box-shadow .2s ease-in-out;
   }
 `;
 
 const StyledImageContainer = styled.div`
-  max-width: 90%;
-  max-height: 90%;
+  width: 90%;
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
 `;
 
 const StyledImage = styled.img`
-  max-width: 100%;
+  width: 100%;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export default class Ad extends React.Component {
