@@ -3,11 +3,18 @@ import styled from 'styled-components';
 
 const StyledAd = styled.div`
   flex-basis: 16.66%;
+  flex-wrap: wrap;
+  &:hover {
+    background-color: red;
+  }
 `;
 
 const StyledImageContainer = styled.div`
   max-width: 90%;
   max-height: 90%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const StyledImage = styled.img`
