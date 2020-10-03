@@ -2,6 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledSearchWrapper = styled.div`
+  & .search-always-show{
+    background: red;
+  }
+
+  & .search-640-show{
+    background: blue;
+  }
+
+  & .search-900-show{
+    background: green;
+    display: block;
+  }
+
   width: 90px;
   height: 108px;
   margin: 12px;
@@ -40,8 +53,8 @@ export default class Search extends React.Component {
   render() {
     return (
       <StyledSearchWrapper>
-        <StyledImage src={this.props.search.Imgurl} />
-        <StyledP>{this.props.search.Search}</StyledP>
+        <StyledImage src={this.props.search.Imgurl} className={this.props.className}/>
+        <StyledP className={this.props.className}>{this.props.search.Search}</StyledP>
       </StyledSearchWrapper>
     );
   }
