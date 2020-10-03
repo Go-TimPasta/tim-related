@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Ad from './Ad.jsx';
 
 const StyledAdsContainer = styled.div`
@@ -19,32 +21,43 @@ const StyledAdsContainer = styled.div`
   }
 `;
 
-const StyledTopRightAds = styled.div`
-
+const StyledAdRight = styled.div`
+  display: inline-block;
+  width: 100%;
 `;
 
-const StyledAdP = styled.p`
-  display: block;
-  text-align: right;
+const StyledAdRightSpan = styled.span`
+  float: right;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+`;
+
+const StyleAdButton = styled.button`
+  padding-left: 14px;
+  padding-right: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: help;
+  alighn-items: center;
+  display: inline-flex;
+`;
+
+const StyledAdSpan = styled.span`
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 13px;
   line-height: 18px;
   margin-right: 6px;
   margin-top: 0px;
-  margin-bottom: 12px;
-
-  &:hover {
-    transition: box-shadow .2s ease-in-out;
-    cursor: help;
-  }
 `;
 
 const StyledQuestionMark = styled.img`
   max-height: 15px;
   max-width: auto;
   vertical-align: middle;
-  margin-left: 6px;
+  margin-left: 4px;
 `;
 
 const StyledAds = styled.div`
@@ -52,6 +65,36 @@ const StyledAds = styled.div`
   flex-wrap: wrap;
   font-family: Arial, Helvetica, sans-serif;
 `;
+
+const StyledPopover = styled(Popover)`
+  margin: 0px;
+  position: absolute;
+  transform: translate(0);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .15s linear;
+  border: 1px solid rgba(34, 34, 34, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 6px 36px rgba(34, 34, 34, 0.325);
+  background: #FFFFFF;
+  color: #222222;
+  padding: 12px;
+  width: 300px;
+  z-index: 1000;
+  font-family: Arial;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: left;
+`;
+
+const popover = (
+  <StyledPopover id="popover-basic">
+    <StyledPopover.Content>
+      Etsy sellers promote their items through our paid advertising platform. Ads are shown to you based on a number of factors like relevancy and the amount sellers pay per click. <a href="https://www.etsy.com/legal/policy/search-advertisement-ranking-disclosures/899478564529" target="_blank" rel="nofollow">Learn more</a>.
+    </StyledPopover.Content>
+  </StyledPopover>
+);
 
 export default class Ads extends React.Component {
   constructor(props) {
@@ -63,7 +106,17 @@ export default class Ads extends React.Component {
     const AdBlocks = this.props.ads.map((ad) => <Ad key={ad.ID} ad={ad} />);
     return (
       <StyledAdsContainer>
-        <StyledAdP>Ads <StyledQuestionMark src='https://bit.ly/3cQlHxH' /></StyledAdP>
+        <StyledAdRight>
+          <StyledAdRightSpan>
+            <OverlayTrigger trigger="focus" placement="left" overlay={popover}>
+              <StyleAdButton>
+                <StyledAdSpan>
+                  Ads <StyledQuestionMark src='https://bit.ly/3cQlHxH' />
+                </StyledAdSpan>
+              </StyleAdButton>
+            </OverlayTrigger>
+          </StyledAdRightSpan>
+        </StyledAdRight>
         <StyledAds>
           {AdBlocks}
         </StyledAds>
