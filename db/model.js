@@ -22,7 +22,7 @@ const related = {
   },
 
   getRelatedSearches: (id, callback) => {
-    db.query(`SELECT * FROM relatedSearches WHERE IsSearch = true AND CategoryId = ${id} ORDER BY RAND() LIMIT 8;`, (err, results) => {
+    db.query(`SELECT * FROM relatedSearches WHERE IsSearch = true AND CategoryId = ${id} ORDER BY RAND() LIMIT 12;`, (err, results) => {
       if (err) {
         callback(err);
       } else {

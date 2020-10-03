@@ -1,4 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledSearchWrapper = styled.div`
+  width: 90px;
+  height: 108px;
+  margin: 12px;
+  text-align: center;
+`;
+
+const StyledImage = styled.img`
+  display: block;
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(34, 34, 34, 0.15);
+  margin-bottom: 6px
+`;
+
+const StyledP = styled.p`
+  line-height: 18px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+`;
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -8,10 +39,10 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src={this.props.search.Imgurl} />
-        <p>{this.props.search.Search}</p>
-      </div>
+      <StyledSearchWrapper>
+        <StyledImage src={this.props.search.Imgurl} />
+        <StyledP>{this.props.search.Search}</StyledP>
+      </StyledSearchWrapper>
     );
   }
 }

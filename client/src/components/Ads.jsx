@@ -58,6 +58,7 @@ const StyledQuestionMark = styled.img`
   max-width: auto;
   vertical-align: middle;
   margin-left: 4px;
+  margin-right: 2px;
 `;
 
 const StyledAds = styled.div`
@@ -91,7 +92,7 @@ const StyledPopover = styled(Popover)`
 const popover = (
   <StyledPopover id="popover-basic">
     <StyledPopover.Content>
-      Etsy sellers promote their items through our paid advertising platform. Ads are shown to you based on a number of factors like relevancy and the amount sellers pay per click. <a href="https://www.etsy.com/legal/policy/search-advertisement-ranking-disclosures/899478564529" target="_blank" rel="nofollow">Learn more</a>.
+      Getsy sellers promote their items through our paid advertising platform. Ads are shown to you based on a number of factors like relevancy and the amount sellers pay per click. <a href="https://www.etsy.com/legal/policy/search-advertisement-ranking-disclosures/899478564529" target="_blank" rel="nofollow">Learn more</a>.
     </StyledPopover.Content>
   </StyledPopover>
 );
@@ -103,12 +104,13 @@ export default class Ads extends React.Component {
   }
 
   render() {
+    const triggerEvent = ['click', 'focus'];
     const AdBlocks = this.props.ads.map((ad) => <Ad key={ad.ID} ad={ad} />);
     return (
       <StyledAdsContainer>
         <StyledAdRight>
           <StyledAdRightSpan>
-            <OverlayTrigger trigger="focus" placement="left" overlay={popover}>
+            <OverlayTrigger trigger={triggerEvent} placement="left-end" overlay={popover}>
               <StyleAdButton>
                 <StyledAdSpan>
                   Ads <StyledQuestionMark src='https://bit.ly/3cQlHxH' />
