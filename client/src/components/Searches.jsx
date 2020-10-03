@@ -4,7 +4,7 @@ import Search from './Search.jsx';
 
 const StyledSearchContainer = styled.div`
   max-width: 1400px;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
   margin-right: auto;
   margin-left: auto;
 

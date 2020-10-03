@@ -3,20 +3,47 @@ import styled from 'styled-components';
 
 const StyledSearchWrapper = styled.div`
   & .search-always-show{
-    background: red;
   }
 
   & .search-640-show{
-    background: blue;
+    @media only screen and (min-width: 0px) {
+      display: none;
+      margin: 0;
+    }
+
+    @media only screen and (min-width: 640px) {
+      line-height: 18px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1px;
+      margin: auto;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
   }
 
   & .search-900-show{
-    background: green;
-    display: block;
+    @media only screen and (min-width: 0px) {
+      display: none;
+      margin: 0;
+    }
+
+    @media only screen and (min-width: 900px) {
+      line-height: 18px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1px;
+      margin: auto;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
   }
 
-  width: 90px;
-  height: 108px;
+
   margin: 12px;
   text-align: center;
 `;
@@ -33,6 +60,7 @@ const StyledImage = styled.img`
 `;
 
 const StyledP = styled.p`
+  width: 90px;
   line-height: 18px;
   font-size: 13px;
   font-weight: 500;
