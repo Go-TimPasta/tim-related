@@ -72,12 +72,15 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <StyledRelatedContainer>
-        <Ads ads={this.state.ads} />
-        <Items items={this.state.items} />
-        <Searches searches={this.state.searches} />
-        <Categories categories={this.state.categories} />
-      </StyledRelatedContainer>
+      <div>
+        <StyledRelatedContainer>
+          <Ads ads={this.state.ads} />
+          <Items items={this.state.items} />
+          <Searches searches={this.state.searches} />
+          <Categories categories={this.state.categories} />
+        </StyledRelatedContainer>
+        <div>More Content Here</div>
+      </div>
     );
   }
 }
