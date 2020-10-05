@@ -1,14 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import Ads from './Ads.jsx';
 import Items from './Items.jsx';
 import Searches from './Searches.jsx';
 import Categories from './Categories.jsx';
-import styled from 'styled-components';
-
-const StyledRelatedContainer = styled.div`
-  min-width: 640px;
-`;
+import Subscribe from './Subscribe.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -71,6 +68,9 @@ export default class App extends React.Component {
   }
 
   render() {
+    const StyledRelatedContainer = styled.div`
+      min-width: 640px;
+    `;
     return (
       <div>
         <StyledRelatedContainer>
@@ -79,7 +79,7 @@ export default class App extends React.Component {
           <Searches searches={this.state.searches} />
           <Categories categories={this.state.categories} />
         </StyledRelatedContainer>
-        <div>More Content Here</div>
+        <Subscribe />
       </div>
     );
   }
