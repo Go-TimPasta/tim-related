@@ -19,6 +19,23 @@ const StyledSearchContainer = styled.div`
   }
 `;
 
+const StyledSearchesHeading = styled.h2`
+  line-height: 24px;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 300;
+  letter-spacing: 0.35px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-left: 9px;
+
+
+  @media only screen and (min-width: 640px) {
+    line-height: 32px;
+    font-size: 26px;
+  }
+`;
+
 const StyledSearches = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -46,7 +63,7 @@ export default class Searches extends React.Component {
 
     return (
       <StyledSearchContainer>
-        <h1>Explore related searches</h1>
+        <StyledSearchesHeading>Explore related searches</StyledSearchesHeading>
         <StyledSearches>
           {SearchBlocks}
         </StyledSearches>

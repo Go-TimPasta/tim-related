@@ -4,6 +4,11 @@ import Ads from './Ads.jsx';
 import Items from './Items.jsx';
 import Searches from './Searches.jsx';
 import Categories from './Categories.jsx';
+import styled from 'styled-components';
+
+const StyledRelatedContainer = styled.div`
+  min-width: 640px;
+`;
 
 export default class App extends React.Component {
   constructor(props) {
@@ -67,12 +72,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <StyledRelatedContainer>
         <Ads ads={this.state.ads} />
         <Items items={this.state.items} />
         <Searches searches={this.state.searches} />
         <Categories categories={this.state.categories} />
-      </div>
+      </StyledRelatedContainer>
     );
   }
 }

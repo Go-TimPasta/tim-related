@@ -44,8 +44,17 @@ const StyledSearchWrapper = styled.div`
   }
 
 
-  margin: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 9px;
   text-align: center;
+  cursor: pointer;
+  border-radius: 9px;
+
+  &:hover{
+    box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
+    transition: box-shadow .2s ease-in-out;
+  }
 `;
 
 const StyledImage = styled.img`
