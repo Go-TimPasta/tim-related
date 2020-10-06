@@ -78,10 +78,9 @@ export default class Ads extends React.Component {
     const StyledPopover = styled(Popover)`
       margin: 0px;
       position: absolute;
-      transform: translate(0);
       opacity: 1;
       visibility: visible;
-      transition: opacity .15s linear;
+      transition: opacity .3s ease-in-out;
       border: 1px solid rgba(34, 34, 34, 0.15);
       border-radius: 12px;
       box-shadow: 0 6px 36px rgba(34, 34, 34, 0.325);
@@ -105,7 +104,7 @@ export default class Ads extends React.Component {
       </StyledPopover>
     );
 
-    const triggerEvent = ['click', 'focus'];
+    const triggerEvent = ['focus'];
     const AdBlocks = this.props.ads.map((ad) => <Ad key={ad.ID} ad={ad} />);
     return (
       <StyledAdsContainer>
