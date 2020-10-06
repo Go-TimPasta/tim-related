@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable max-len */
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -188,10 +190,10 @@ export default class Subscribe extends React.Component {
   }
 
   addEmail(email) {
-    axios.post(`http://localhost:8005/related/subscribe`, {
-      email: email,
+    axios.post('http://localhost:8005/related/subscribe', {
+      email,
     })
-      .then((data) => {
+      .then(() => {
         this.setState({
           view: 'no',
         });
@@ -206,9 +208,10 @@ export default class Subscribe extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    const validEmail = /^[^@]+@\w+(\.\w+)+\w$/.test(this.state.email);
+    const { email } = this.state;
+    const validEmail = /^[^@]+@\w+(\.\w+)+\w$/.test(email);
     if (validEmail) {
-      this.checkEmail(this.state.email);
+      this.checkEmail(email);
     } else {
       this.setState({
         view: 'invalid',
@@ -217,39 +220,40 @@ export default class Subscribe extends React.Component {
   }
 
   render() {
-    const content = (view) => {
-      if (view === 'form' || view === 'invalid') {
+    const { view } = this.state;
+    const content = (viewState) => {
+      if (viewState === 'form' || viewState === 'invalid') {
         return (
           <div>
             <StyledCenterSubscriberForm>
               <form>
-                <StyledSubscribeFormContainer style={this.state.view === 'invalid' ? { backgroundColor: '#FDDCD8', borderColor: '166, 26, 46, 0.35' } : { backgroundColor: 'white' }}>
+                <StyledSubscribeFormContainer style={view === 'invalid' ? { backgroundColor: '#FDDCD8', borderColor: '166, 26, 46, 0.35' } : { backgroundColor: 'white' }}>
                   <StyledSubscribeInput type="text" placeholder="Enter your email" className="input-text" onChange={(e) => { this.handleChange(e); }} />
                   <StyledSubscribeButton type="submit" className="submit-button" onClick={(e) => { this.handleClick(e); }}>Subscribe</StyledSubscribeButton>
                 </StyledSubscribeFormContainer>
               </form>
             </StyledCenterSubscriberForm>
-            <p style={this.state.view === 'invalid' ? { display: 'block', color: "#A61A2E" } : { display: 'none' }}>Please enter a valid email address.</p>
+            <p style={view === 'invalid' ? { display: 'block', color: '#A61A2E' } : { display: 'none' }}>Please enter a valid email address.</p>
           </div>
         );
       }
-      if (view === 'yes') {
+      if (viewState === 'yes') {
         return (
           <StyledAlreadyHasAccountContainer>
             <StyledAlreadyHasAccount>Looks like you have an account!  Please Log in to subscribe.</StyledAlreadyHasAccount>
           </StyledAlreadyHasAccountContainer>
         );
       }
-      if (view === 'no') {
+      if (viewState === 'no') {
         return (
           <StyledNewAccountContainer>
-            <StyledNewAccount>Great! We've sent you an email to confirm your subscription.</StyledNewAccount>
+            <StyledNewAccount>Great! We&apos;ve sent you an email to confirm your subscription.</StyledNewAccount>
           </StyledNewAccountContainer>
         );
       }
     };
 
-    const subscribeContent = content(this.state.view);
+    const subscribeContent = content(view);
 
     return (
       <div>

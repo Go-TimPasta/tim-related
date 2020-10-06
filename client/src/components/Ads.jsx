@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable max-len */
+/* eslint-disable import/extensions */
 import React from 'react';
 import styled from 'styled-components';
 import Popover from 'react-bootstrap/Popover';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Ad from './Ad.jsx';
-
 
 export default class Ads extends React.Component {
   constructor(props) {
@@ -99,13 +102,16 @@ export default class Ads extends React.Component {
     const popover = (
       <StyledPopover id="popover-basic">
         <StyledPopover.Content>
-          Getsy sellers promote their items through our paid advertising platform. Ads are shown to you based on a number of factors like relevancy and the amount sellers pay per click. <a href="https://www.etsy.com/legal/policy/search-advertisement-ranking-disclosures/899478564529" target="_blank" rel="nofollow">Learn more</a>.
+          Getsy sellers promote their items through our paid advertising platform. Ads are shown to you based on a number of factors like relevancy and the amount sellers pay per click.
+          <a href="https://www.etsy.com/legal/policy/search-advertisement-ranking-disclosures/899478564529" target="_blank" rel="nofollow"> Learn more</a>
+          .
         </StyledPopover.Content>
       </StyledPopover>
     );
 
     const triggerEvent = ['focus'];
-    const AdBlocks = this.props.ads.map((ad) => <Ad key={ad.ID} ad={ad} />);
+    const { ads } = this.props;
+    const AdBlocks = ads.map((ad) => <Ad key={ad.ID} ad={ad} />);
     return (
       <StyledAdsContainer>
         <StyledAdRight>
@@ -113,7 +119,8 @@ export default class Ads extends React.Component {
             <OverlayTrigger trigger={triggerEvent} placement="left-end" overlay={popover}>
               <StyleAdButton>
                 <StyledAdSpan>
-                  Ads <StyledQuestionMark src='https://bit.ly/3cQlHxH' />
+                  Ads
+                  <StyledQuestionMark src="https://bit.ly/3cQlHxH" />
                 </StyledAdSpan>
               </StyleAdButton>
             </OverlayTrigger>
