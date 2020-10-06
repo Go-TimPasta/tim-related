@@ -114,12 +114,9 @@ export default class Subscribe extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  //axios get to database (check if email subscribed)
   checkEmail(email) {
     axios.get(`http://localhost:8005/related/subscribe/${email}`)
       .then((data) => {
-        console.log(data);
-        //if data array is empty, post
         if (data.data.length === 0) {
           this.addEmail(email);
         } else {
@@ -130,7 +127,6 @@ export default class Subscribe extends React.Component {
       });
   }
 
-  //axios post (if email not already subscribed)
   addEmail(email) {
     axios.post(`http://localhost:8005/related/subscribe`, {
       email: email,
@@ -142,7 +138,6 @@ export default class Subscribe extends React.Component {
       });
   }
 
-  //on change for input text in form
   handleChange(e) {
     this.setState({
       email: e.target.value,
@@ -197,10 +192,17 @@ export default class Subscribe extends React.Component {
     const subscribeContent = content(this.state.view);
 
     return (
+<<<<<<< HEAD
       <StyledSubscribeContainer>
         <StyledInvitationMessage>Yes! Send me exclusive offers, unique gift ideas, and personalized tips for shopping and selling on Getsy.</StyledInvitationMessage>
         {subscribeContent}
       </StyledSubscribeContainer>
+=======
+      <div>
+        <h3>Yes! Send me exclusive offers, unique gift ideas, and personalized tips for shopping and selling on Getsy.</h3>
+        {subscribeContent}
+      </div>
+>>>>>>> e54d3e2decc63a8739f58ea40c0c047a85645146
     );
   }
 }
