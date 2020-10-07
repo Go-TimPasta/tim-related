@@ -36,8 +36,8 @@ server.get('/related/items/:id', (req, res) => {
     } else {
       res.status(200).send(results);
     }
-  })
-})
+  });
+});
 
 // route get for related searches
 
@@ -48,8 +48,8 @@ server.get('/related/searches/:id', (req, res) => {
     } else {
       res.status(200).send(results);
     }
-  })
-})
+  });
+});
 
 // route get for related categories and searches
 
@@ -72,8 +72,8 @@ server.get('/related/subscribe/:email', (req, res) => {
     } else {
       res.status(200).send(results);
     }
-  })
-})
+  });
+});
 
 // route to update subscriptions (if email not already subscribed)
 
@@ -84,8 +84,8 @@ server.post('/related/subscribe', (req, res) => {
     } else {
       res.status(200).send(results);
     }
-  })
-})
+  });
+});
 
 server.listen(port, () => console.log(`listening on ${port}`));
 
