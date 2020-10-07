@@ -2,7 +2,7 @@ const db = require('.');
 
 const related = {
   getAds: (id, callback) => {
-    db.query(`SELECT * FROM relatedProducts WHERE Ad = true AND CategoryId = ${id} ORDER BY RAND() LIMIT 12;`, (err, results) => {
+    db.query(`SELECT * FROM relatedProducts WHERE Ad = true AND CategoryId = ${id} LIMIT 12;`, (err, results) => {
       if (err) {
         callback(err);
       } else {
@@ -12,7 +12,7 @@ const related = {
   },
 
   getItems: (id, callback) => {
-    db.query(`SELECT * FROM relatedProducts WHERE Ad = false AND CategoryId = ${id} ORDER BY RAND() LIMIT 6;`, (err, results) => {
+    db.query(`SELECT * FROM relatedProducts WHERE Ad = false AND CategoryId = ${id} LIMIT 6;`, (err, results) => {
       if (err) {
         callback(err);
       } else {
@@ -22,7 +22,7 @@ const related = {
   },
 
   getRelatedSearches: (id, callback) => {
-    db.query(`SELECT * FROM relatedSearches WHERE IsSearch = true AND CategoryId = ${id} ORDER BY RAND() LIMIT 12;`, (err, results) => {
+    db.query(`SELECT * FROM relatedSearches WHERE IsSearch = true AND CategoryId = ${id} LIMIT 12;`, (err, results) => {
       if (err) {
         callback(err);
       } else {
@@ -32,7 +32,7 @@ const related = {
   },
 
   getRelatedCategories: (id, callback) => {
-    db.query(`SELECT relatedSearches.Search FROM relatedSearches WHERE CategoryId = ${id} ORDER BY RAND() LIMIT 8;`, (err, results) => {
+    db.query(`SELECT relatedSearches.Search FROM relatedSearches WHERE CategoryId = ${id} LIMIT 8;`, (err, results) => {
       if (err) {
         callback(err);
       } else {
