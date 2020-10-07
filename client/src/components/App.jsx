@@ -33,7 +33,7 @@ export default class App extends React.Component {
   }
 
   getAds(id) {
-    axios.get(`http://localhost:8005/related/ads/${id}`)
+    axios.get(`/related/ads/${id}`)
       .then((results) => {
         this.setState({
           ads: results.data,
@@ -42,7 +42,7 @@ export default class App extends React.Component {
   }
 
   getItems(id) {
-    axios.get(`http://localhost:8005/related/items/${id}`)
+    axios.get(`/related/items/${id}`)
       .then((results) => {
         this.setState({
           items: results.data,
@@ -51,7 +51,7 @@ export default class App extends React.Component {
   }
 
   getSearches(id) {
-    axios.get(`http://localhost:8005/related/searches/${id}`)
+    axios.get(`/related/searches/${id}`)
       .then((results) => {
         this.setState({
           searches: results.data,
@@ -60,7 +60,7 @@ export default class App extends React.Component {
   }
 
   getCategories(id) {
-    axios.get(`http://localhost:8005/related/categories/${id}`)
+    axios.get(`/related/categories/${id}`)
       .then((results) => {
         this.setState({
           categories: results.data,
