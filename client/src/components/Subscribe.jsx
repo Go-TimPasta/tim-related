@@ -177,7 +177,7 @@ export default class Subscribe extends React.Component {
   }
 
   checkEmail(email) {
-    axios.get(`http://localhost:8005/related/subscribe/${email}`)
+    axios.get(`/related/subscribe/${email}`)
       .then((data) => {
         if (data.data.length === 0) {
           this.addEmail(email);
@@ -190,7 +190,7 @@ export default class Subscribe extends React.Component {
   }
 
   addEmail(email) {
-    axios.post('http://localhost:8005/related/subscribe', {
+    axios.post('/related/subscribe', {
       email,
     })
       .then(() => {
