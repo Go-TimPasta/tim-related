@@ -116,13 +116,13 @@ const createProduct = () => {
   product.Sale = sale[Math.floor(Math.random() * 10)];
   product.FreeShipping = freeShippingCondition[Math.floor(Math.random() * 3)];
   product.Ad = booleans[Math.floor(Math.random() * 2)];
-  product.CategoryId = Math.ceil(Math.random() * 5);
+  product.CategoryId = Math.ceil(Math.random() * 100);
   return product;
 };
 
 const createProducts = () => {
   const productsArr = [];
-  for (let i = 0; i < 500; i += 1) {
+  for (let i = 0; i < 4000; i += 1) {
     productsArr.push(createProduct());
   }
   return productsArr;
@@ -143,13 +143,13 @@ const createSearch = () => {
   search.Search = faker.lorem.words();
   search.Imgurl = pictures[Math.floor(Math.random() * 80)];
   search.IsSearch = booleans[Math.floor(Math.random() * 2)];
-  search.CategoryId = Math.ceil(Math.random() * 5);
+  search.CategoryId = Math.ceil(Math.random() * 100);
   return search;
 };
 
 const createSearches = () => {
   const searchesArr = [];
-  for (let i = 0; i < 500; i += 1) {
+  for (let i = 0; i < 4000; i += 1) {
     searchesArr.push(createSearch());
   }
   return searchesArr;

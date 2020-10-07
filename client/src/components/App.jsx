@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -68,16 +69,19 @@ export default class App extends React.Component {
   }
 
   render() {
+    const {
+      ads, items, searches, categories,
+    } = this.state;
     const StyledRelatedContainer = styled.div`
       min-width: 640px;
     `;
     return (
       <div>
         <StyledRelatedContainer>
-          <Ads ads={this.state.ads} />
-          <Items items={this.state.items} />
-          <Searches searches={this.state.searches} />
-          <Categories categories={this.state.categories} />
+          <Ads ads={ads} />
+          <Items items={items} />
+          <Searches searches={searches} />
+          <Categories categories={categories} />
         </StyledRelatedContainer>
         <Subscribe />
       </div>
