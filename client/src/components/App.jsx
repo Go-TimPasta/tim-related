@@ -12,7 +12,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      categoryId: 1,
+      categoryId: 3,
       ads: [],
       items: [],
       searches: [],
@@ -74,6 +74,7 @@ export default class App extends React.Component {
     } = this.state;
     const StyledRelatedContainer = styled.div`
       min-width: 640px;
+      margin-top: 36px;
     `;
     return (
       <div>
