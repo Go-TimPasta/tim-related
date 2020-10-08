@@ -9,7 +9,6 @@ export default class Items extends React.Component {
   }
 
   render() {
-
     const StyledItemsContainer = styled.div`
       max-width: 1400px;
       margin-bottom: 36px;
@@ -83,6 +82,7 @@ export default class Items extends React.Component {
       max-height: 100%;
       max-width: 12px;
       transition: 0.1s all ease;
+      box-sizing: content-box;
     `;
 
     const StyledItems = styled.div`
