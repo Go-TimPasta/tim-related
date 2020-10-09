@@ -13,7 +13,7 @@ export default class Category extends React.Component {
       margin-right: 6px;
       margin-bottom: 6px;
       color: #222222;
-      font-family: Arial;
+      font-family: 'Roboto', sans-serif;
       background: none;
       background-color: rgba(34, 34, 34, 0.075);
       border: none;

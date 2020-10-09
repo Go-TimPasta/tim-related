@@ -30,7 +30,7 @@ export default class Categories extends React.Component {
     const StyledCategoriesHeading = styled.h2`
       line-height: 24px;
       font-size: 20px;
-      font-family: Arial;
+      font-family: 'Roboto', sans-serif;
       font-weight: 300;
       letter-spacing: 0.35px;
       margin-top: 18px;
@@ -46,7 +46,7 @@ export default class Categories extends React.Component {
     const StyledCategories = styled.div`
       display: flex;
       flex-wrap: wrap;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Roboto', sans-serif;
     `;
 
     const CategoryBlocks = this.props.categories.map((category, index) => <Category key={index} category={category} />);

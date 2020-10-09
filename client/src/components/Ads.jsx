@@ -56,7 +56,7 @@ export default class Ads extends React.Component {
     `;
 
     const StyledAdSpan = styled.span`
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Roboto', sans-serif;
       font-weight: 300;
       font-size: 13px;
       line-height: 18px;
@@ -75,7 +75,7 @@ export default class Ads extends React.Component {
     const StyledAds = styled.div`
       display: flex;
       flex-wrap: wrap;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Roboto', sans-serif;
     `;
 
     const StyledPopover = styled(Popover)`
@@ -92,7 +92,7 @@ export default class Ads extends React.Component {
       padding: 12px;
       width: 300px;
       z-index: 1000;
-      font-family: Arial;
+      font-family: 'Roboto', sans-serif;
       font-weight: 300;
       font-size: 13px;
       line-height: 18px;

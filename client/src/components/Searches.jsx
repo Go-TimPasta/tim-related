@@ -30,7 +30,7 @@ export default class Searches extends React.Component {
     const StyledSearchesHeading = styled.h2`
       line-height: 24px;
       font-size: 20px;
-      font-family: Arial;
+      font-family: 'Roboto', sans-serif;
       font-weight: 300;
       letter-spacing: 0.35px;
       margin-top: 18px;
@@ -47,7 +47,7 @@ export default class Searches extends React.Component {
     const StyledSearches = styled.div`
       display: flex;
       flex-wrap: wrap;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Roboto', sans-serif;
     `;
 
     const SearchBlocks = this.props.searches.map((search, index) => {

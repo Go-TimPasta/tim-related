@@ -33,7 +33,7 @@ export default class Items extends React.Component {
       display: flex;
       margin: 0;
       font-size: 14px;
-      font-family: Arial;
+      font-family: 'Roboto', sans-serif;
       color: #222;
     `;
 
@@ -88,7 +88,7 @@ export default class Items extends React.Component {
     const StyledItems = styled.div`
       display: flex;
       flex-wrap: wrap;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Roboto', sans-serif;
     `;
 
     const ItemBlocks = this.props.items.map((item) => <Item key={item.ID} item={item} />);
