@@ -27,7 +27,7 @@ const StyledRaggedBorderSvg = styled.svg`
 const StyledSubscribeContainer = styled.div`
   background-color: #D7E6F5;
   text-align: center;
-  font-family: Arial;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   padding-bottom: 36px
 `;
@@ -62,7 +62,7 @@ const StyledSubscribeInput = styled.input`
   border: 1px solid rgba(34, 34, 34, 0.15);
   border-right: 0;
   outline: 0;
-  font-family: Arial;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 28px;
