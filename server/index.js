@@ -60,8 +60,8 @@ server.get('/related/categories/:id', (req, res) => {
     } else {
       res.status(200).send(results);
     }
-  })
-})
+  });
+});
 
 // route to check if email is already subscribed
 
@@ -89,4 +89,4 @@ server.post('/related/subscribe', (req, res) => {
 
 server.listen(port, () => console.log(`listening on ${port}`));
 
-//server, routers and database helpers all working (via Postman Testing)
+// server, routers and database helpers all working (via Postman Testing)
