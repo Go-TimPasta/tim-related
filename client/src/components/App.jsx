@@ -28,8 +28,8 @@ export default class App extends React.Component {
     const { categoryId } = this.state;
     this.getAds(categoryId);
     this.getItems(categoryId);
-    this.getSearches(categoryId);
-    this.getCategories(categoryId);
+    // this.getSearches(categoryId);
+    // this.getCategories(categoryId);
   }
 
   getAds(id) {
