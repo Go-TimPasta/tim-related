@@ -4,7 +4,7 @@ Related Products and Searches Repo
 * [Tech Stack](#tech-stack)
 * [Database Schema](#database-schema)
 * [Routes API](#routes-api)
-* [Request & Response Examples](#request-&-response-examples)
+* [Request and Response Examples](#request-and-response-examples)
 * [Note](#note)
 * [Installation Guide](#installation-guide)
 
@@ -36,6 +36,7 @@ Related Products and Searches Repo
 #### Subsrcibe
 - email
 
+
 ### Routes API
 #### Product
 Routes | HTTP | Description
@@ -55,7 +56,8 @@ Routes | HTTP | Description
 **/related/subscribe/:email** | `GET` | Get an email
 **/related/subscribe/** | `POST` | Create a subscription email
 
-### Request & Response Examples
+
+### Request and Response Examples
 
 #### API Resources
 
@@ -95,6 +97,7 @@ Request body:
 }
 ```
 
+
 ### Note
 - Datas have no relationship; not dependent on one another
 - Parallel computations supported by document-type DB (MongoDB)
@@ -104,6 +107,7 @@ Request body:
   - Description
   - Step
   - Schema
+
 
 ### Installation Guide
 ```
