@@ -67,6 +67,7 @@ Routes | HTTP | Description
 Example: http://localhost:8005/related/ads/1
 
 Response body:
+```javascript
 [
     {
         "id": 740,
@@ -81,16 +82,18 @@ Response body:
     },
     ...
 ]
+```
 
 #### POST /related/subscribe
 
 Example: Create – POST  http://localhost:8005/related/subscribe
 
 Request body:
-
+```javascript
 {
     "email": "example@gmail.com"
 }
+```
 
 ### Note
 - Datas have no relationship; not dependent on one another
