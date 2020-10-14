@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyparser = require('body-parser');
 const path = require('path');
 const router = require('./router');
-const model = require('../db/models/model');
+// const model = require('../db/models/model');
 
 const server = express();
 const port = 8005;
@@ -30,7 +30,7 @@ server.use('/related', router);
 //   });
 // });
 
-// route get for limited number of similar items
+// // route get for limited number of similar items
 
 // server.get('/related/items/:id', (req, res) => {
 //   model.getItems(req.params.id, (err, results) => {
@@ -42,7 +42,7 @@ server.use('/related', router);
 //   });
 // });
 
-// route get for related searches
+// // route get for related searches
 
 // server.get('/related/searches/:id', (req, res) => {
 //   model.getRelatedSearches(req.params.id, (err, results) => {
@@ -54,7 +54,7 @@ server.use('/related', router);
 //   });
 // });
 
-// route get for related categories and searches
+// // route get for related categories and searches
 
 // server.get('/related/categories/:id', (req, res) => {
 //   model.getRelatedCategories(req.params.id, (err, results) => {
@@ -66,7 +66,7 @@ server.use('/related', router);
 //   });
 // });
 
-// route to check if email is already subscribed
+// // route to check if email is already subscribed
 
 // server.get('/related/subscribe/:email', (req, res) => {
 //   model.getOneEmail(req.params.email, (err, results) => {
@@ -78,7 +78,7 @@ server.use('/related', router);
 //   });
 // });
 
-// route to update subscriptions (if email not already subscribed)
+// // route to update subscriptions (if email not already subscribed)
 
 // server.post('/related/subscribe', (req, res) => {
 //   model.addEmail(req.body, (err, results) => {

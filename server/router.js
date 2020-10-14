@@ -2,6 +2,7 @@ const router = require('express').Router();
 const adsController = require('./controllers/ads.controller');
 const itemsController = require('./controllers/items.controller');
 const searchesController = require('./controllers/searches.controller');
+const subsrcibeController = require('./controllers/subscribe.controller');
 
 // route get for limited number of ads
 router
@@ -22,5 +23,15 @@ router
 router
   .route('/categories/:id')
   .get(searchesController.getRelatedCategories);
+
+// route get for related searches
+router
+  .route('/subscribe/:email')
+  .get(subsrcibeController.getOneEmail);
+
+// route get for related categories and searches
+router
+  .route('/subscribe')
+  .get(subsrcibeController.addEmail);
 
 module.exports = router;
