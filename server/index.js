@@ -4,7 +4,6 @@ const cors = require('cors');
 const bodyparser = require('body-parser');
 const path = require('path');
 const router = require('./router');
-// const model = require('../db/models/model');
 
 const server = express();
 const port = 8005;
