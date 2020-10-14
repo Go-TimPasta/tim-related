@@ -11,6 +11,7 @@ exports.getOneEmail = (req, res) => {
 };
 
 exports.addEmail = (req, res) => {
+  console.log(req);
   subcscribeModel.addEmail(req.body, (err, results) => {
     if (err) {
       res.status(400).send(err);

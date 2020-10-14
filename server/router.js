@@ -32,6 +32,6 @@ router
 // route get for related categories and searches
 router
   .route('/subscribe')
-  .get(subsrcibeController.addEmail);
+  .post(subsrcibeController.addEmail);
 
 module.exports = router;
