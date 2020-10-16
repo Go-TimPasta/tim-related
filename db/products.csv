@@ -1,0 +1,11 @@
+id,isSearch,imgUrl,categoryId,name,shop,price,sale,freeShipping,ad,clicks
+1,true,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy554.jpg,62,voluptatem tempore illum
+2,false,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy105.jpg,36,Tasty Fresh Mouse,quia optio non,213,50,2,true,0
+3,false,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy619.jpg,68,Sleek Cotton Towels,modi blanditiis non,528,10,1,true,0
+4,false,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy245.jpg,99,Unbranded Rubber Cheese,et dolores dignissimos,808,10,3,true,0
+5,true,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy40.jpg,7,non similique est
+6,false,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy311.jpg,95,Ergonomic Frozen Table,quam qui ipsam,710,40,2,true,0
+7,false,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy107.jpg,37,Generic Concrete Chips,ullam voluptatem et,681,null,2,true,0
+8,false,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy26.jpg,4,Refined Granite Soap,id non eos,286,null,2,false,0
+9,true,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy912.jpg,95,hic iure aut
+10,true,https://etsyportraits.s3-us-west-1.amazonaws.com/etsy373.jpg,53,consectetur iusto eligendi
