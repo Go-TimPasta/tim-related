@@ -10,7 +10,8 @@
   "scripts": {
     "build": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "seed": "node db/seed.js",
+    "seed": "node db/seedProductsCSV.js",
+    "import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
     "test": "jest"
   },
   "dependencies": {

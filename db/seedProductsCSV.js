@@ -2,7 +2,7 @@ const faker = require('faker');
 const fs = require('fs');
 // const db = require('./indexMongo');
 
-const writeProducts = fs.createWriteStream('products.csv');
+const writeProducts = fs.createWriteStream('db/products.csv');
 writeProducts.write('id,isSearch,imgUrl,categoryId,name,shop,price,sale,freeShipping,ad,clicks\n', 'utf8');
 
 const booleans = [true, false];
@@ -10,7 +10,7 @@ const freeShippingCondition = [1, 2, 3];
 const sales = [null, null, null, null, null, 10, 20, 30, 40, 50];
 
 function writeTenMillionProducts(writer, encoding, callback) {
-  let i = 10;
+  let i = 10000000;
   let id = 0;
   function write() {
     let ok = true;

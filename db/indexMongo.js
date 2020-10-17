@@ -9,16 +9,17 @@ connection.once('open', () => {
 });
 
 const product = new mongoose.Schema({
+  id: Number,
   name: String,
-  img_url: String,
+  imgUrl: String,
   shop: String,
   price: Number,
   sale: Number,
-  free_shipping: Number,
-  category_id: Number,
+  freeShipping: Number,
+  categoryId: Number,
   ad: Boolean,
   clicks: Number,
-  is_search: Boolean,
+  isSearch: Boolean,
 });
 
 const subscribe = new mongoose.Schema({
