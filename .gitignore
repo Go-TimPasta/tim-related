@@ -102,3 +102,6 @@ bundle.js
 
 # TernJS port file
 .tern-port
+
+# CSV data file
+./db/products.csv
