@@ -1,4 +1,6 @@
 # Etsy-Related
+This is an application that was inherited from gEtsy's legacy codebase. The database is scaled to 10 million data points and the server layer is extended to support production-level traffic while maintaing its service-oriented architecture. In essence, my mission was to build the server and database to handle large quantities of data and traffic.
+
 Related Products and Searches Repo
 
 * [Tech Stack](#tech-stack)

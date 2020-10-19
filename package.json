@@ -10,8 +10,9 @@
   "scripts": {
     "build": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "seed": "node db/seedProductsCSV.js",
-    "import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
+    "seed": "node db/csv.seed.js",
+    "mongo:import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
+    "postgres:import": "psql -U tkang postgres -f postgres.sql",
     "test": "jest"
   },
   "dependencies": {
