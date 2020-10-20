@@ -12,7 +12,7 @@
     "start": "nodemon server/index.js",
     "seed": "node db/csv.seed.js",
     "mongo:import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
-    "postgres:import": "psql -U tkang postgres -f postgres.sql",
+    "postgres:import": "psql -U postgres postgres -f postgres.sql",
     "test": "jest"
   },
   "dependencies": {

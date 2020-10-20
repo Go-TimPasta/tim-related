@@ -9,7 +9,7 @@ const freeShippingCondition = [1, 2, 3];
 const sales = [null, null, null, null, null, 10, 20, 30, 40, 50];
 
 function writeTenMillionProducts(writer, encoding, callback) {
-  let i = 10;
+  let i = 10000000;
   let id = 0;
   function write() {
     let ok = true;
