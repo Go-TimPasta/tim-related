@@ -25,7 +25,7 @@ function writeTenMillionProducts(writer, encoding, callback) {
       let sale = null;
       let freeShipping = null;
       let ad = null;
-      const clicks = 0;
+      const clicks = Math.floor(Math.random() * 1000 + 1);
 
       if (isSearch) {
         name = faker.lorem.words();
