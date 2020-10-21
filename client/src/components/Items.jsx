@@ -91,7 +91,7 @@ export default class Items extends React.Component {
       font-family: 'Roboto', sans-serif;
     `;
 
-    const ItemBlocks = this.props.items.map((item) => <Item key={item.ID} item={item} />);
+    const ItemBlocks = this.props.items.map((item) => <Item key={item.id} item={item} />);
     return (
       <StyledItemsContainer>
         <StyledItemsHeadingContainer>

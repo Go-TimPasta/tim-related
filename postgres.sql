@@ -20,4 +20,6 @@ CREATE TABLE products (
 
 \copy products FROM './db/products.csv' DELIMITER ',' NULL 'null' CSV HEADER;
 
-CREATE INDEX products_cc_idx ON products (categoryid ASC, clicks DESC);
+CREATE INDEX products_cac_idx ON products (categoryid ASC, ad ASC, clicks DESC);
+
+CREATE INDEX products_cic_idx ON products (categoryid ASC, issearch ASC, clicks DESC);

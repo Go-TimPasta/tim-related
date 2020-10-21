@@ -90,8 +90,8 @@ export default class Search extends React.Component {
 
     return (
       <StyledSearchWrapper>
-        <StyledImage src={this.props.search.Imgurl} className={this.props.className}/>
-        <StyledP className={this.props.className}>{this.props.search.Search}</StyledP>
+        <StyledImage src={this.props.search.imgurl} className={this.props.name}/>
+        <StyledP className={this.props.name}>{this.props.search.name}</StyledP>
       </StyledSearchWrapper>
     );
   }

@@ -48,7 +48,7 @@ export default class Category extends React.Component {
 
     return (
       <StyledCategoryContainer>
-        <StyledCategoryName>{this.props.category.Search}</StyledCategoryName>
+        <StyledCategoryName>{this.props.category.name}</StyledCategoryName>
       </StyledCategoryContainer>
     );
   }
