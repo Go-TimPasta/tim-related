@@ -10,8 +10,9 @@
   "scripts": {
     "build": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "seed": "node db/seedProductsCSV.js",
-    "import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
+    "seed": "node db/csv.seed.js",
+    "mongo:import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
+    "postgres:import": "psql -U postgres postgres -f postgres.sql",
     "test": "jest"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "path": "^0.12.7",
+    "pg": "^8.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",

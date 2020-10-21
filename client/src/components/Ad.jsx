@@ -125,22 +125,22 @@ export default class Ad extends React.Component {
     `;
 
     let salePrice;
-    const salePercent = 1 - (this.props.ad.Sale / 100);
-    if (this.props.ad.Sale === null) {
-      salePrice = this.props.ad.Price;
+    const salePercent = 1 - (this.props.ad.sale / 100);
+    if (this.props.ad.sale === null) {
+      salePrice = Number(this.props.ad.price);
     } else {
-      salePrice = this.props.ad.Price * salePercent;
+      salePrice = Number(this.props.ad.price) * salePercent;
     }
     let sale;
-    if (this.props.ad.Sale === null) {
+    if (this.props.ad.sale === null) {
       sale = null;
     } else {
-      sale = <StyleSale><s>${this.props.ad.Price.toFixed(2)}</s> ({this.props.ad.Sale}% off)</StyleSale>;
+      sale = <StyleSale><s>${this.props.ad.price}</s> ({this.props.ad.sale}% off)</StyleSale>;
     }
     let freeShipping;
-    if (this.props.ad.FreeShipping === 1) {
+    if (this.props.ad.freeshipping === 1) {
       freeShipping = <StyleShippingContainer><StyleShipping>FREE Shipping</StyleShipping></StyleShippingContainer>;
-    } else if (this.props.ad.FreeShipping === 2) {
+    } else if (this.props.ad.freeshipping === 2) {
       freeShipping = <StyleShippingEligible>Free Shipping Eligible</StyleShippingEligible>;
     } else {
       freeShipping = null;
@@ -148,11 +148,11 @@ export default class Ad extends React.Component {
     return (
       <StyledAd>
         <StyledImageContainer>
-          <StyledImage src={this.props.ad.Imgurl} />
+          <StyledImage src={this.props.ad.imgurl} />
         </StyledImageContainer>
         <StyledTextContainer>
-          <StyleProductDescription>{this.props.ad.ProductName}</StyleProductDescription>
-          <StyleStoreInfo>Ad by {this.props.ad.Shop}</StyleStoreInfo>
+          <StyleProductDescription>{this.props.ad.name}</StyleProductDescription>
+          <StyleStoreInfo>Ad by {this.props.ad.shop}</StyleStoreInfo>
           <StylePrice>${salePrice.toFixed(2)}</StylePrice>
           {sale}
           {freeShipping}

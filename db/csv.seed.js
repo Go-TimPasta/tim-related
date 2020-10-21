@@ -1,6 +1,5 @@
 const faker = require('faker');
 const fs = require('fs');
-// const db = require('./indexMongo');
 
 const writeProducts = fs.createWriteStream('db/products.csv');
 writeProducts.write('id,isSearch,imgUrl,categoryId,name,shop,price,sale,freeShipping,ad,clicks\n', 'utf8');
@@ -20,20 +19,25 @@ function writeTenMillionProducts(writer, encoding, callback) {
       const isSearch = booleans[Math.floor(Math.random() * 2)];
       const imgUrl = `https://etsyportraits.s3-us-west-1.amazonaws.com/etsy${Math.floor(Math.random() * 1000 + 1)}.jpg`;
       const categoryId = Math.floor(Math.random() * 100 + 1);
-      let data;
+      let name;
+      let shop = null;
+      let price = null;
+      let sale = null;
+      let freeShipping = null;
+      let ad = null;
+      const clicks = Math.floor(Math.random() * 1000 + 1);
+
       if (isSearch) {
-        const name = faker.lorem.words();
-        data = `${id},${isSearch},${imgUrl},${categoryId},${name}\n`;
+        name = faker.lorem.words();
       } else {
-        const name = faker.commerce.productName();
-        const shop = faker.lorem.words();
-        const price = parseFloat(Math.ceil(Math.random() * Math.ceil(1000)));
-        const sale = sales[Math.floor(Math.random() * 10)];
-        const freeShipping = freeShippingCondition[Math.floor(Math.random() * 3)];
-        const ad = booleans[Math.floor(Math.random() * 2)];
-        const clicks = 0;
-        data = `${id},${isSearch},${imgUrl},${categoryId},${name},${shop},${price},${sale},${freeShipping},${ad},${clicks}\n`;
+        name = faker.commerce.productName();
+        shop = faker.lorem.words();
+        price = parseFloat(Math.ceil(Math.random() * Math.ceil(1000)));
+        sale = sales[Math.floor(Math.random() * 10)];
+        freeShipping = freeShippingCondition[Math.floor(Math.random() * 3)];
+        ad = booleans[Math.floor(Math.random() * 2)];
       }
+      const data = `${id},${isSearch},${imgUrl},${categoryId},${name},${shop},${price},${sale},${freeShipping},${ad},${clicks}\n`;
       if (i === 0) {
         writer.write(data, encoding, callback);
       } else {

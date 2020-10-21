@@ -111,7 +111,7 @@ export default class Ads extends React.Component {
 
     const triggerEvent = ['focus'];
     const { ads } = this.props;
-    const AdBlocks = ads.map((ad) => <Ad key={ad.ID} ad={ad} />);
+    const AdBlocks = ads.map((ad) => <Ad key={ad.id} ad={ad} />);
     return (
       <StyledAdsContainer>
         <StyledAdRight>

@@ -104,4 +104,4 @@ bundle.js
 .tern-port
 
 # CSV data file
-./db/products.csv
+*.csv

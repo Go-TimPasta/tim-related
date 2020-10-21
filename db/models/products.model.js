@@ -2,7 +2,7 @@ const db = require('..');
 
 const products = {
   getAds: (id, callback) => {
-    db.query(`SELECT * FROM relatedProducts WHERE Ad = true AND CategoryId = ${id} LIMIT 12;`, (err, results) => {
+    db.query(`SELECT * FROM products WHERE Ad = true AND CategoryId = ${id} LIMIT 12;`, (err, results) => {
       if (err) {
         callback(err);
       } else {

@@ -126,22 +126,22 @@ export default class Item extends React.Component {
     `;
 
     let salePrice;
-    const salePercent = 1 - (this.props.item.Sale / 100);
-    if (this.props.item.Sale === null) {
-      salePrice = this.props.item.Price;
+    const salePercent = 1 - (this.props.item.sale / 100);
+    if (this.props.item.sale === null) {
+      salePrice = this.props.item.price;
     } else {
-      salePrice = this.props.item.Price * salePercent;
+      salePrice = this.props.item.price * salePercent;
     }
     let sale;
-    if (this.props.item.Sale === null) {
+    if (this.props.item.sale === null) {
       sale = null;
     } else {
-      sale = <StyleSale><s>${this.props.item.Price.toFixed(2)}</s> ({this.props.item.Sale}% off)</StyleSale>;
+      sale = <StyleSale><s>${this.props.item.price}</s> ({this.props.item.sale}% off)</StyleSale>;
     }
     let freeShipping;
-    if (this.props.item.FreeShipping === 1) {
+    if (this.props.item.freeshipping === 1) {
       freeShipping = <StyleShippingContainer><StyleShipping>FREE Shipping</StyleShipping></StyleShippingContainer>;
-    } else if (this.props.item.FreeShipping === 2) {
+    } else if (this.props.item.freeshipping === 2) {
       freeShipping = <StyleShippingEligible>Free Shipping Eligible</StyleShippingEligible>;
     } else {
       freeShipping = null;
@@ -149,12 +149,12 @@ export default class Item extends React.Component {
     return (
       <StyledItem>
         <StyledImageContainer>
-          <StyledImage src={this.props.item.Imgurl} />
+          <StyledImage src={this.props.item.imgurl} />
         </StyledImageContainer>
         <StyledTextContainer>
-          <StyleProductDescription>{this.props.item.ProductName}</StyleProductDescription>
-          <StyleStoreInfo>Ad by {this.props.item.Shop}</StyleStoreInfo>
-          <StylePrice>${salePrice.toFixed(2)}</StylePrice>
+          <StyleProductDescription>{this.props.item.name}</StyleProductDescription>
+          <StyleStoreInfo>Ad by {this.props.item.shop}</StyleStoreInfo>
+          <StylePrice>${Number(salePrice).toFixed(2)}</StylePrice>
           {sale}
           {freeShipping}
         </StyledTextContainer>

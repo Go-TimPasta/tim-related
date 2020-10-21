@@ -1,21 +1,21 @@
-const searchesModel = require('../../db/models/searches.model');
+const productsModel = require('../../db/psql.models/products.model');
 
 exports.getRelatedSearches = (req, res) => {
-  searchesModel.getRelatedSearches(req.params.id, (err, results) => {
+  productsModel.getRelatedSearches(req.params.id, (err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      res.status(200).send(results);
+      res.status(200).send(results.rows);
     }
   });
 };
 
 exports.getRelatedCategories = (req, res) => {
-  searchesModel.getRelatedCategories(req.params.id, (err, results) => {
+  productsModel.getRelatedCategories(req.params.id, (err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      res.status(200).send(results);
+      res.status(200).send(results.rows);
     }
   });
 };

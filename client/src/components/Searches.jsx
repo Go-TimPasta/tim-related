@@ -52,13 +52,13 @@ export default class Searches extends React.Component {
 
     const SearchBlocks = this.props.searches.map((search, index) => {
       if (index < 4) {
-        return (<Search key={search.ID} search={search} className="search-always-show" />);
+        return (<Search key={search.id} search={search} className="search-always-show" />);
       }
       if (index >= 4 && index < 6) {
-        return (<Search key={search.ID} search={search} className="search-640-show" />);
+        return (<Search key={search.id} search={search} className="search-640-show" />);
       }
       if (index >= 6) {
-        return (<Search key={search.ID} search={search} className="search-900-show" />);
+        return (<Search key={search.id} search={search} className="search-900-show" />);
       }
     });
 
