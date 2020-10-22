@@ -105,3 +105,6 @@ bundle.js
 
 # CSV data file
 *.csv
+
+# New Relic License Key file
+newrelic.password.js
