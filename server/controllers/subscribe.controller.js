@@ -1,4 +1,4 @@
-const subcscribeModel = require('../../db/models/subscribe.model');
+const subcscribeModel = require('../../db/psql.models/subscribe.model');
 
 exports.getOneEmail = (req, res) => {
   subcscribeModel.getOneEmail(req.params.email, (err, results) => {

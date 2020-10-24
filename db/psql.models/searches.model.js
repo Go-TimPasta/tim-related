@@ -1,4 +1,4 @@
-const db = require('../psql.index');
+const db = require('..');
 
 const searches = {
   getRelatedSearches: (id, callback) => {
