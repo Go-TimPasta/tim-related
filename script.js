@@ -2,9 +2,8 @@ import http from 'k6/http';
 import { check, sleep } from 'k6';
 export let options = {
   stages: [
-    { duration: '30s', target: 400 },
-    { duration: '10m', target: 400 },
-    { duration: '30s', target: 0 },
+    { duration: '10s', target: 450 },
+    { duration: '10m', target: 450 },
   ],
 };
 

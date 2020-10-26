@@ -13,6 +13,7 @@
     "seed": "node db/csv.seed.js",
     "mongo:import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
     "postgres:import": "psql -U postgres postgres -f postgres.sql",
+    "redis": "redis-server",
     "test": "jest"
   },
   "dependencies": {
@@ -22,6 +23,8 @@
     "babel-jest": "^26.3.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.2",
+    "cluster": "^0.7.7",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "css-loader": "^4.3.0",
     "express": "^4.17.1",
