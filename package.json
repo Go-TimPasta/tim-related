@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "webpack -d --watch",
-    "start": "nodemon server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
     "seed": "node db/csv.seed.js",
     "mongo:import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
     "postgres:import": "psql -U postgres postgres -f postgres.sql",
