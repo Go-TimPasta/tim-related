@@ -1,17 +1,11 @@
-const mysql = require('mysql');
+const { Pool } = require('pg');
 
-const connection = mysql.createConnection({
-  user: 'root',
-  password: '',
+const pool = new Pool({
+  user: 'tkang',
+  host: 'localhost',
   database: 'related',
+  password: '',
+  port: 5432,
 });
 
-connection.connect();
-
-connection.query('SELECT 1 + 1 AS solution', (err, rows) => {
-  if (err) throw err;
-  // eslint-disable-next-line no-console
-  console.log('The solution is: ', rows[0].solution);
-});
-
-module.exports = connection;
+module.exports = pool;

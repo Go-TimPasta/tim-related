@@ -35,6 +35,7 @@ export default class App extends React.Component {
   getAds(id) {
     axios.get(`/related/ads/${id}`)
       .then((results) => {
+        console.log(results);
         this.setState({
           ads: results.data,
         });
