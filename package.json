@@ -10,11 +10,11 @@
   "scripts": {
     "build": "webpack -d --watch",
     "start": "NODE_ENV=production node server/index.js",
-    "seed": "node db/csv.seed.js",
+    "seed": "node db/seedCSV.js",
     "mongo:import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
     "postgres:import": "psql -U postgres postgres -f postgres.sql",
-    "redis": "redis-server",
-    "test": "jest"
+    "test": "k6 run script.js",
+    "redis": "redis-server"
   },
   "dependencies": {
     "@babel/preset-env": "^7.11.5",

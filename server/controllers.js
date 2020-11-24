@@ -1,6 +1,6 @@
-const productsModel = require('../db/psql.models/products.model');
-const searchesModels = require('../db/psql.models/searches.model');
-const subcscribeModel = require('../db/psql.models/subscribe.model');
+const productsModel = require('../db/models/products.model');
+const searchesModels = require('../db/models/searches.model');
+const subcscribeModel = require('../db/models/subscribe.model');
 
 module.exports = {
   getAds: (req, res) => {
@@ -58,7 +58,7 @@ module.exports = {
       if (err) {
         res.status(400).send(err);
       } else {
-        res.status(200).send(results);
+        res.status(201).send(results);
       }
     });
   },

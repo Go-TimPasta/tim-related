@@ -18,7 +18,7 @@ CREATE TABLE products (
   clicks int
 );
 
-\copy products FROM './db/products.csv' DELIMITER ',' NULL 'null' CSV HEADER;
+\copy products FROM './products.csv' DELIMITER ',' NULL 'null' CSV HEADER;
 
 CREATE INDEX products_cac_idx ON products (categoryid ASC, ad ASC, clicks DESC);
 

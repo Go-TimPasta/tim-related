@@ -108,3 +108,6 @@ bundle.js
 
 # New Relic License Key file
 newrelic.password.js
+
+# rdb file
+*.rdb

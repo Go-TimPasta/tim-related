@@ -38,14 +38,16 @@ Open `http://localhost:8005`
 
 ---
 
-### Tech Stack
+## Tech Stack
 - ExpressJS
 - MongoDB
 - PostgreSQL
 
-### Database Schema
+---
 
-#### Product
+## Database Schema
+
+### Product Table
 - name
 - imgurl
 - shop
@@ -56,77 +58,55 @@ Open `http://localhost:8005`
 - categoryId
 - clicks
 
-#### Search
+### Search Table
 - name
 - imgurl
 - isSearch
 - categoryId
 - clicks
 
-#### Subsrcibe
+### Subsrcibe Table
 - email
 
+---
 
-### Routes API
-#### Product
-Routes | HTTP | Description
---- | --- | ---
-**/related/ads/:id** | `GET` | Get ads
-**/related/items/:id** | `GET` | Get items
+## Routes API
+Routes | HTTP | Description | Status
+--- | --- | --- | ---
+**/related/ads/:id** | `GET` | Returns a list of advertised products for a particular product | 200
+**/related/items/:id** | `GET` | Returns a list of related products for a particular product | 200
+**/related/searches/:id** | `GET` | Returns a list of search words for a particular product | 200
+**/related/categories/:id** | `GET` | Returns a list of words for a category | 200
+**/related/subscribe/:email** | `GET` | Returns an email for a user | 200
+**/related/subscribe/** | `POST` | Creates a subscription email | 201
 
-#### Search
-Routes | HTTP | Description
---- | --- | ---
-**/related/searches/:id** | `GET` | Get searches
-**/related/categories/:id** | `GET` | Get categories
+---
 
-#### Subscribe
-Routes | HTTP | Description
---- | --- | ---
-**/related/subscribe/:email** | `GET` | Get an email
-**/related/subscribe/** | `POST` | Create a subscription email
+## Optimization
 
-
-### Request and Response Examples
-
-#### API Resources
-
-  - [GET /related/ads/:id](#get-relatedads)
-  - [POST /related/subscribe](#post-relatedemail)
-
-#### GET /related/ads/:id
-
-Example: http://localhost:8005/related/ads/1
-
-Response body:
-```javascript
-[
-    {
-        "id": 740,
-        "name": "Handcrafted Rubber Mouse",
-        "imgurl": "https://bit.ly/3jqISkr",
-        "shop": "ut magni neque",
-        "price": 84,
-        "sale": 30,
-        "freeShipping": 2,
-        "ad": 1,
-        "categoryId": 1
-    },
-    ...
-]
+### *Query*
+>GET -- /related/ads/%{*:1-100000}
+>PostgreSQL command:
+```
+SELECT * FROM products
+WHERE categoryId = 1
+ORDER BY clicks ASC
+LIMIT 12;
 ```
 
-#### POST /related/subscribe
+### *Query Benchmarking Before AWS Server Deployment*
+Optimization Type | Avg. Response Time
+No Indexing | 8050 ms
+Multicolumn Indexing (categoryid ASC, clicks DESC) | 13 ms
 
-Example: Create – POST  http://localhost:8005/related/subscribe
+---
 
-Request body:
-```javascript
-{
-    "email": "example@gmail.com"
-}
-```
+## Load-Testing
 
+### *Test Type*
+>
+
+---
 
 ### Note
 - Datas have no relationship; not dependent on one another
