@@ -102,10 +102,19 @@ No Indexing | 8050 ms
 Multicolumn Indexing (categoryid ASC, clicks DESC) | 13 ms
 
 ### Load-Testing in AWS EC2 Instance
-**Number of responses per second at bottleneck (Error Rate < 1.0%)*
-Optimization Type | Responses / Second* | Stable Response Time |  Error Rate
+Optimization Type | Responses / Second* | Response Time** |  Error Rate
 --- | --- | --- | ---
 Indexing | 900 rps | 60 ms | 0.0 %
+Indexing, Horizontal Scaling (2 servers)*** | 850 rps | 70 ms | 0.3 %
+Indexing, Horizontal Scaling (3 servers) | 2650 rps | 60 ms | 0.0 %
+Indexing, Horizontal Scaling (4 servers) | 3500 rps | 65 ms | 0.0 %
+Indexing, Horizontal Scaling (4 servers), Nginx Caching | 10500 rps | 60 ms | 0.1 %
+
+**Number of responses per second at bottleneck (Error Rate < 1.0%)*
+
+***Response time at stable state*
+
+****Horizontal scaling was performed using Nginx Round-Robin load balancing
 
 ---
 
