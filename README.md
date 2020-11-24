@@ -10,7 +10,6 @@ Related Products and Searches Repo
 * [Database Schema](#database-schema)
 * [Routes API](#routes-api)
 * [Optimization](#optimization)
-* [Note](#note)
 
 ---
 
