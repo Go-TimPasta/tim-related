@@ -105,7 +105,7 @@ Multicolumn Indexing (categoryid ASC, clicks DESC) | 13 ms
 Optimization Type | Responses / Second* | Response Time** |  Error Rate
 --- | --- | --- | ---
 Indexing | 850 rps | 60 ms | 0.3 %
-Indexing, Horizontal Scaling (2 servers)*** | 2100 rps | 70 ms | 0.0 %
+Indexing, Horizontal Scaling (2 servers)*** | 2100 rps | 61 ms | 0.0 %
 Indexing, Horizontal Scaling (3 servers) | 2650 rps | 60 ms | 0.0 %
 Indexing, Horizontal Scaling (4 servers) | 3500 rps | 65 ms | 0.0 %
 Indexing, Horizontal Scaling (4 servers), Nginx Caching | 10500 rps | 60 ms | 0.1 %
