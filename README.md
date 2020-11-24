@@ -9,7 +9,7 @@ Related Products and Searches Repo
 * [Tech Stack](#tech-stack)
 * [Database Schema](#database-schema)
 * [Routes API](#routes-api)
-* [Request and Response Examples](#request-and-response-examples)
+* [Optimization](#optimization)
 * [Note](#note)
 
 ---
@@ -104,8 +104,8 @@ Multicolumn Indexing (categoryid ASC, clicks DESC) | 13 ms
 ### Load-Testing in AWS EC2 Instance
 Optimization Type | Responses / Second* | Response Time** |  Error Rate
 --- | --- | --- | ---
-Indexing | 900 rps | 60 ms | 0.0 %
-Indexing, Horizontal Scaling (2 servers)*** | 850 rps | 70 ms | 0.3 %
+Indexing | 850 rps | 60 ms | 0.3 %
+Indexing, Horizontal Scaling (2 servers)*** | 2100 rps | 70 ms | 0.0 %
 Indexing, Horizontal Scaling (3 servers) | 2650 rps | 60 ms | 0.0 %
 Indexing, Horizontal Scaling (4 servers) | 3500 rps | 65 ms | 0.0 %
 Indexing, Horizontal Scaling (4 servers), Nginx Caching | 10500 rps | 60 ms | 0.1 %
@@ -116,14 +116,47 @@ Indexing, Horizontal Scaling (4 servers), Nginx Caching | 10500 rps | 60 ms | 0.
 
 ****Horizontal scaling was performed using Nginx Round-Robin load balancing*
 
----
+### Detailed Loader.io results:
 
-### Note
-- Datas have no relationship; not dependent on one another
-- Parallel computations supported by document-type DB (MongoDB)
+<details>
+<summary>Indexing</summary>
+<br>
 
-#### Release 0
-- Documenting first. READ.ME
-  - Description
-  - Step
-  - Schema
+![](readme-assets/indexing.png)
+
+</details>
+
+<details>
+<summary>Indexing, Horizontal Scaling (2 servers)</summary>
+<br>
+
+![](readme-assets/2Servers.png)
+
+</details>
+
+<details>
+<summary>Indexing, Horizontal Scaling (3 servers)</summary>
+
+<br>
+
+![](readme-assets/3Servers.png)
+
+</details>
+
+<details>
+<summary>Indexing, Horizontal Scaling (4 servers)</summary>
+
+<br>
+
+![](readme-assets/4Servers.png)
+
+</details>
+
+<details>
+<summary>Indexing, Horizontal Scaling (4 servers), Nginx Caching</summary>
+
+<br>
+
+![](readme-assets/caching.png)
+
+</details>
