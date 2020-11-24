@@ -86,20 +86,26 @@ Routes | HTTP | Description | Status
 
 ### *Query*
 >GET -- /related/ads/%{*:1-100000}
+
 >PostgreSQL command:
 ```
 SELECT * FROM products
-WHERE categoryId = 1
+WHERE categoryId = `${id}`
 ORDER BY clicks ASC
 LIMIT 12;
 ```
 
 ### *Query Benchmarking Before AWS Server Deployment*
 Optimization Type | Avg. Response Time
+--- | ---
 No Indexing | 8050 ms
 Multicolumn Indexing (categoryid ASC, clicks DESC) | 13 ms
 
----
+### *Load-Testing in AWS EC2 Instance*
+*Number of responses per second at bottleneck (Error Rate < 1.0%)
+Optimization Type | Responses / Second* | Stable Response Time |  Error Rate
+--- | --- | --- | ---
+Indexing | 900 rps | 60 ms | 0.0 %
 
 ## Load-Testing
 
