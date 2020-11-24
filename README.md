@@ -114,7 +114,7 @@ Indexing, Horizontal Scaling (4 servers), Nginx Caching | 10500 rps | 60 ms | 0.
 
 ***Response time at stable state*
 
-****Horizontal scaling was performed using Nginx Round-Robin load balancing
+****Horizontal scaling was performed using Nginx Round-Robin load balancing*
 
 ---
 
