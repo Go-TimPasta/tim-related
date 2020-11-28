@@ -13,7 +13,8 @@
     "seed": "node db/seedCSV.js",
     "mongo:import": "mongoimport --type csv -d related -c products --headerline --drop db/products.csv",
     "postgres:import": "psql -U postgres postgres -f postgres.sql",
-    "test": "k6 run script.js",
+    "test": "mocha",
+    "perf": "k6 run script.js",
     "redis": "redis-server"
   },
   "dependencies": {

@@ -1,5 +1,4 @@
 const express = require('express');
-const morgan = require('morgan');
 const bodyparser = require('body-parser');
 const path = require('path');
 
@@ -7,7 +6,6 @@ const server = express();
 const port = 8005;
 const router = require('./router');
 
-server.use(morgan('dev'));
 server.use(bodyparser.json());
 server.use(bodyparser.urlencoded({ extended: true }));
 server.use(express.static(path.join(__dirname, '../client/dist')));
