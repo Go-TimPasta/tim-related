@@ -12,7 +12,7 @@ chai.use(chaiEach);
 
 describe('Ads', () => {
   describe('GET related/ads/1', () => {
-    it('it should GET 12 products that are ads ', (done) => {
+    it('should GET 12 products', (done) => {
       chai.request(server)
         .get('/related/ads/1')
         .end((err, res) => {
@@ -24,7 +24,17 @@ describe('Ads', () => {
         });
     });
 
-    it('it should GET products in descending order of clicks', (done) => {
+    it('should GET ad products', (done) => {
+      chai.request(server)
+        .get('/related/ads/1')
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.each.have.property('ad').that.is.eql(true);
+          done();
+        });
+    });
+
+    it('should GET products in descending order of clicks', (done) => {
       chai.request(server)
         .get('/related/ads/1')
         .end((err, res) => {
