@@ -12,9 +12,11 @@ describe('Ads', () => {
       chai.request(server)
         .get('/related/ads/1')
         .end((err, res) => {
+          console.log(res.body);
           res.should.have.status(200);
           res.body.should.be.a('array');
           res.body.length.should.be.eql(12);
+          res.body[0].should.have.property('cateogryid');
           done();
         });
     });
