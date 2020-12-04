@@ -3,6 +3,10 @@ This is an application that was inherited from gEtsy's legacy codebase. The goal
 
 ---
 
+![Alt Text](https://media.giphy.com/media/Gq9TD5Py840rYYecZg/giphy.gif)
+
+---
+
 Related Products and Searches Repo
 ## Table of Contents
 * [Installation Guide](#installation-guide)
