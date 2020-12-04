@@ -3,7 +3,7 @@ This is an application that was inherited from gEtsy's legacy codebase. The goal
 
 ---
 
-![](readme-assets/webpage.png)
+![](readme-assets/webpage.jpg)
 
 ---
 
