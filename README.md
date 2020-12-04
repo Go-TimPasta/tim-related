@@ -1,9 +1,9 @@
-# Etsy-Related
+# Etsy - Related Products Module
 This is an application that was inherited from gEtsy's legacy codebase. The goal of this project was to build a scalable RESTful API service for a retail website and optimize to handle web-scale traffic. The database is scaled to 10 million data points and the server layer is extended to support production-level traffic while maintaining its service-oriented architecture. The service was incrementally optimized through database multicolumn-indexing, horizontal scaling, and Nginx caching to handle a throughput of 10k client requests per second with an average response time of 60ms.
 
 ---
 
-![Alt Text](https://media.giphy.com/media/Gq9TD5Py840rYYecZg/giphy.gif)
+![](readme-assets/webpage.png)
 
 ---
 
