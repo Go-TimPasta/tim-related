@@ -3,6 +3,8 @@ This is an application that was inherited from gEtsy's legacy codebase. The goal
 
 ---
 
+<h3><b>Demo GIF:</b>https://gph.is/g/4zWQ7vj</h3>
+
 ![](readme-assets/webpage.jpg)
 
 ---
