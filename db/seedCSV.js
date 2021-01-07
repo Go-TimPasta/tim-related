@@ -18,7 +18,7 @@ function writeTenMillionProducts(writer, encoding, callback) {
       id += 1;
       const isSearch = booleans[Math.floor(Math.random() * 2)];
       const imgUrl = `https://etsyportraits.s3-us-west-1.amazonaws.com/etsy${Math.floor(Math.random() * 1000 + 1)}.jpg`;
-      const categoryId = Math.floor(Math.random() * 100 + 1);
+      const categoryId = Math.floor(Math.random() * 100000 + 1);
       let name;
       let shop = null;
       let price = null;
